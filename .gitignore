@@ -1,0 +1,63 @@
+# ===== JetBrains Rider / IntelliJ =====
+.idea/
+*.iml
+*.iws
+out/
+
+# ===== .NET =====
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# ASP.NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ===== Angular / Node =====
+node_modules/
+dist/
+.angular/
+.angular/cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment / secrets
+.env
+.env.local
+appsettings.Development.json
+appsettings.*.local.json
+
+# ===== VS Code (jeśli nie usunąłeś) =====
+.vscode/*
+!.vscode/extensions.json
+
+# ===== System =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Logi / tymczasowe =====
+*.log
+*.tmp
+*.cache
