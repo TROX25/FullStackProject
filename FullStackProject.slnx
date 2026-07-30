@@ -1,3 +1,9 @@
 <Solution>
   <Project Path="MojProjekt.Api/MojProjekt.Api.csproj" />
+  <Project Path="MojProjekt.Domain/MojProjekt.Domain.csproj" />
+  <Project Path="MojProjekt.Application/MojProjekt.Application.csproj" />
+  <Project Path="MojProjekt.Infrastructure/MojProjekt.Infrastructure.csproj" />
+  <Project Path="MojProjekt.UnitTests/MojProjekt.UnitTests.csproj" />
+  <Project Path="MojProjekt.Infrastructure.Tests/MojProjekt.Infrastructure.Tests.csproj" />
+  <Project Path="MojProjekt.Api.IntegrationTests/MojProjekt.Api.IntegrationTests.csproj" />
 </Solution>

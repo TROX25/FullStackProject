@@ -48,6 +48,12 @@ yarn-error.log*
 appsettings.Development.json
 appsettings.*.local.json
 
+# ===== Local SQLite data =====
+App_Data/
+*.db
+*.db-shm
+*.db-wal
+
 # ===== VS Code (jeśli nie usunąłeś) =====
 .vscode/*
 !.vscode/extensions.json

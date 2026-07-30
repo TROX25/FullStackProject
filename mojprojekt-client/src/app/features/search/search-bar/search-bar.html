@@ -1,0 +1,21 @@
+<form class="search-bar" (ngSubmit)="submit()">
+  <textarea
+    name="query"
+    rows="2"
+    placeholder="Describe what you're looking for, e.g. &quot;a reliable family estate under PLN 60,000, preferably automatic and no older than 2019&quot;"
+    [(ngModel)]="query"
+    [disabled]="isSearching"
+  ></textarea>
+  <button type="submit" [disabled]="isSearching || query().trim().length === 0">
+    {{ isSearching ? 'Searching…' : 'Search' }}
+  </button>
+</form>
+
+<div class="examples">
+  <span class="examples__label">Try:</span>
+  @for (example of exampleQueries; track example) {
+    <button type="button" class="chip" (click)="useExample(example)" [disabled]="isSearching">
+      {{ example }}
+    </button>
+  }
+</div>

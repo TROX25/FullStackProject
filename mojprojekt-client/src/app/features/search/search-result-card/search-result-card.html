@@ -1,0 +1,51 @@
+<article class="card">
+  <div class="card__thumb">
+    @if (result.listing.thumbnailUrl) {
+      <img [src]="result.listing.thumbnailUrl" [alt]="result.listing.title" loading="lazy" />
+    } @else {
+      <div class="card__thumb-placeholder">No photo</div>
+    }
+  </div>
+
+  <div class="card__body">
+    <div class="card__header">
+      <h3>
+        <a [href]="result.listing.sourceUrl" target="_blank" rel="noopener">{{ result.listing.title }}</a>
+      </h3>
+      <span class="card__score" [title]="'Match score: ' + result.score + '/100'">{{ result.score }}</span>
+    </div>
+
+    <p class="card__meta">
+      {{ result.listing.priceAmount | number: '1.0-0' }} {{ result.listing.currency.toUpperCase() }}
+      · {{ result.listing.year }}
+      · {{ result.listing.mileage ? (result.listing.mileage | number) + ' km' : 'mileage n/a' }}
+      · {{ result.listing.transmission }}
+      · {{ result.listing.fuelType }}
+      · {{ result.listing.bodyType }}
+      · {{ result.listing.city }}
+    </p>
+
+    <button type="button" class="card__toggle" (click)="toggleExpanded()">
+      {{ expanded() ? 'Hide match details' : 'Why this matched' }}
+    </button>
+
+    @if (expanded()) {
+      <div class="card__details">
+        @if (result.matchReasons.length > 0) {
+          <ul class="card__reasons">
+            @for (reason of result.matchReasons; track reason) {
+              <li>{{ reason }}</li>
+            }
+          </ul>
+        }
+        @if (result.unmetPreferences.length > 0) {
+          <ul class="card__unmet">
+            @for (item of result.unmetPreferences; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        }
+      </div>
+    }
+  </div>
+</article>

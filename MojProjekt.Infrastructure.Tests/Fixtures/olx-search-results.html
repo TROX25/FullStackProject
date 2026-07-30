@@ -1,0 +1,37 @@
+<!--
+  Synthetic fixture approximating OLX's historically documented search-results markup
+  (data-cy/data-testid attributes). NOT captured from the live site — this sandboxed development
+  environment has no general internet access, so this fixture could not be verified against real
+  OLX HTML. See OlxHtmlParser's class-level doc comment and ASSUMPTIONS.md.
+-->
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="listing-grid">
+    <div data-cy="l-card">
+      <a href="/d/oferta/skoda-octavia-2018-kombi-ID1a2b3c.html">
+        <img src="https://images.olx.test/octavia-thumb.jpg" />
+        <h4>Skoda Octavia 2018 Kombi</h4>
+        <p data-testid="ad-price">45 900 zł</p>
+        <p data-testid="location-date">Warszawa - 3 godziny temu</p>
+      </a>
+    </div>
+    <div data-cy="l-card">
+      <a href="/d/oferta/bmw-seria-3-2016-sedan-ID4d5e6f.html">
+        <img src="https://images.olx.test/bmw-thumb.jpg" />
+        <h4>BMW Seria 3 2016 Sedan</h4>
+        <p data-testid="ad-price">38 500 zł</p>
+        <p data-testid="location-date">Krakow - Dzisiaj o 08:15</p>
+      </a>
+    </div>
+    <div data-cy="l-card">
+      <a href="/d/oferta/opel-astra-2012-hatchback-ID7g8h9i.html">
+        <img src="https://images.olx.test/astra-thumb.jpg" />
+        <h4>Opel Astra 2012 Hatchback</h4>
+        <p data-testid="ad-price">14 000 zł</p>
+        <p data-testid="location-date">Poznan - 2 dni temu</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

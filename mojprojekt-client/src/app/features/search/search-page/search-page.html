@@ -1,0 +1,32 @@
+<div class="search-page">
+  <app-crawl-status-banner />
+
+  <app-search-bar [isSearching]="isSearching()" (search)="onSearch($event)" />
+
+  @if (error()) {
+    <div class="state state--error">{{ error() }}</div>
+  }
+
+  @if (isSearching()) {
+    <div class="state">Searching your local listings…</div>
+  }
+
+  @if (!isSearching() && response()) {
+    <div class="summary">
+      <p class="summary__intent">{{ response()!.intentSummary }}</p>
+      @for (warning of response()!.warnings; track warning) {
+        <p class="summary__warning">⚠ {{ warning }}</p>
+      }
+    </div>
+
+    @if (response()!.results.length > 0) {
+      <app-search-results-list [results]="response()!.results" />
+    } @else {
+      <div class="state">No listings matched your search. Try a broader query, or fetch fresh listings above.</div>
+    }
+  }
+
+  @if (!isSearching() && !response() && hasSearched() === false && !error()) {
+    <div class="state state--hint">Describe the car you're looking for above to search the local dataset.</div>
+  }
+</div>
