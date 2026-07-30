@@ -2,6 +2,11 @@
 
 A small fullstack app that collects recently published car listings from OLX.pl, stores them locally, and lets a user search them in natural language (e.g. *"a reliable family estate under PLN 60,000, preferably automatic and no older than 2019"*), with every result explaining **why** it matched.
 
+
+https://github.com/user-attachments/assets/f5544297-e234-413f-a51c-0c0dcf10be81
+
+
+
 Built for a recruitment take-home assignment. See also:
 - [`ARCHITECTURE.md`](./ARCHITECTURE.md) — components, data flow, key design decisions
 - [`ASSUMPTIONS.md`](./ASSUMPTIONS.md) — assumptions, known limitations, what's next
