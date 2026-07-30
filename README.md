@@ -98,7 +98,7 @@ Stop the backend and delete `MojProjekt.Api/App_Data/mojprojekt.db` (plus any `-
 MojProjekt.Domain/            Entities, value objects, enums — no outward dependencies
 MojProjekt.Application/       CQRS (MediatR) commands/queries, DTOs, interfaces implemented by Infrastructure
 MojProjekt.Infrastructure/    EF Core/SQLite, OLX crawler, Anthropic integration, ranking service
-MojProjekt.Api/               ASP.NET Core minimal API — composition root
+MojProjekt.Api/               ASP.NET Core Web API (MVC controllers) — composition root
 MojProjekt.UnitTests/         Ranking, AI-parsing/validation, naive extractor tests
 MojProjekt.Infrastructure.Tests/  Crawler HTML parsing (fixtures) and robots.txt parsing tests
 MojProjekt.Api.IntegrationTests/  WebApplicationFactory-based end-to-end API tests

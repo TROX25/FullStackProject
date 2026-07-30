@@ -1,4 +1,3 @@
-using MojProjekt.Api.Endpoints;
 using MojProjekt.Application.DependencyInjection;
 using MojProjekt.Infrastructure.DependencyInjection;
 using MojProjekt.Infrastructure.Persistence;
@@ -16,6 +15,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddOpenApi();
+builder.Services.AddControllers();
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -46,9 +46,7 @@ app.UseCors("AllowAngular");
 
 app.UseHttpsRedirection();
 
-app.MapListingsEndpoints();
-app.MapCrawlEndpoints();
-app.MapSearchEndpoints();
+app.MapControllers();
 
 app.Run();
 
