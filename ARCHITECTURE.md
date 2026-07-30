@@ -11,8 +11,8 @@
                                        │ HTTP (JSON)
                           ┌────────────▼──────────────┐
                           │       MojProjekt.Api       │  composition root:
-                          │  minimal API endpoints,    │  DI wiring, migrate-on-
-                          │  CORS, OpenAPI              │  startup, endpoint mapping
+                          │  MVC controllers, CORS,    │  DI wiring, migrate-on-
+                          │  OpenAPI                    │  startup, endpoint mapping
                           └────────────┬──────────────┘
                                        │
                           ┌────────────▼──────────────┐
