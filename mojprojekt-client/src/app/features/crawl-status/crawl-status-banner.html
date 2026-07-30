@@ -1,0 +1,30 @@
+<div class="banner" [class.banner--fallback]="latestRun()?.sourceUsed === 'Fallback'" [class.banner--failed]="latestRun()?.status === 'Failed'">
+  <div class="banner__info">
+    @if (!hasCheckedOnce()) {
+      <span>Checking local dataset…</span>
+    } @else if (!latestRun()) {
+      <span>No listings collected yet. Fetch data before searching.</span>
+    } @else if (isPolling() || latestRun()!.status === 'Running' || latestRun()!.status === 'Pending') {
+      <span>Fetching listings…</span>
+    } @else if (latestRun()!.status === 'Failed') {
+      <span>Last fetch failed: {{ latestRun()!.errorMessage }}</span>
+    } @else {
+      <span>
+        {{ latestRun()!.listingsFound }} listings ·
+        <strong>{{ latestRun()!.sourceUsed === 'Live' ? 'Live OLX data' : 'Sample fallback data' }}</strong>
+        · updated {{ latestRun()!.completedAt | date: 'short' }}
+      </span>
+      @if (latestRun()!.sourceUsed === 'Fallback') {
+        <span class="banner__hint">(live OLX crawl unavailable — showing bundled sample listings instead)</span>
+      }
+    }
+  </div>
+
+  @if (error()) {
+    <span class="banner__error">{{ error() }}</span>
+  }
+
+  <button type="button" (click)="refresh()" [disabled]="isPolling()">
+    {{ isPolling() ? 'Fetching…' : 'Fetch listings' }}
+  </button>
+</div>

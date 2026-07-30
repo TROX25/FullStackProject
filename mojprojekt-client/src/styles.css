@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --color-bg: #f7f7f8;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f0f1f3;
+  --color-border: #dcdfe4;
+  --color-text: #1a1c1f;
+  --color-text-muted: #666c75;
+
+  --color-accent-bg: #e4ecff;
+  --color-accent-text: #2451c9;
+
+  --color-success-text: #1f7a3d;
+  --color-warning-bg: #fff6e0;
+  --color-warning-border: #f0d585;
+  --color-warning-text: #8a6300;
+  --color-danger-bg: #fdecec;
+  --color-danger-border: #f3b7b7;
+  --color-danger-text: #b3261e;
+
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #16171a;
+    --color-surface: #1f2124;
+    --color-surface-muted: #26282c;
+    --color-border: #34373c;
+    --color-text: #eceef0;
+    --color-text-muted: #a0a6ad;
+
+    --color-accent-bg: #1e3a6e;
+    --color-accent-text: #9ec1ff;
+
+    --color-success-text: #6fd191;
+    --color-warning-bg: #3a301a;
+    --color-warning-border: #6b571f;
+    --color-warning-text: #e7c366;
+    --color-danger-bg: #3a1f1f;
+    --color-danger-border: #6b2c2c;
+    --color-danger-text: #f29b9b;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+button[type='submit'] {
+  background: var(--color-accent-text);
+  color: white;
+  border-color: transparent;
+}

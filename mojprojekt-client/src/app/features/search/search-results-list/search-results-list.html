@@ -1,0 +1,5 @@
+<div class="results-list">
+  @for (result of results; track result.listing.id) {
+    <app-search-result-card [result]="result" />
+  }
+</div>
